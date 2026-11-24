@@ -1,0 +1,15 @@
+{
+  "name": "mobil-afet-notification-backend",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Review copy of the optional notification backend",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "test": "node --test auth.test.js"
+  },
+  "dependencies": {
+    "express": "^4.18.2",
+    "firebase-admin": "^12.1.1"
+  }
+}
