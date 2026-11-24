@@ -12,6 +12,14 @@
 
 Afet bilgileri, kullanıcı bildirimleri ve tahliye ekranları içeren Android/Java projesi.
 
+## Proje bağlamı
+
+Üniversite eğitimi sırasında geliştirilen bir Android projesidir. Afet bilgilerini, harita/rota entegrasyonlarını ve bildirim akışlarını tek uygulamada ele alarak mobil geliştirme deneyimi kazanmak amacıyla hazırlanmıştır. Resmî bir afet veya acil durum hizmeti olarak sunulmaz.
+
+### Servis entegrasyonları
+
+Özgün API anahtarları ve kişisel bulut yapılandırmaları bu portföy sürümüne dahil değildir. Eski servis bağlantıları kullanım dışı bırakılmıştır. Entegrasyonları çalıştırmak için kendi Firebase/Appwrite projenizi ve ilgili API sağlayıcılarında kendi anahtarlarınızı oluşturup yerel yapılandırma üzerinden sağlamanız gerekir. Bu gereksinim, kişisel hesaplardan bağımsız ve yeniden kurulabilir bir örnek sunmak için bilinçli bir tercihtir.
+
 ## Özellikler
 
 - Deprem listesi ve afet detay ekranları
@@ -33,12 +41,12 @@ Java, Android SDK, Retrofit, Firebase, osmdroid. Kaynaktaki Android yapılandır
 
 ## İsteğe bağlı bildirim sunucusu
 
-`backend/` klasöründeki Node.js servisi çalışma kopyasında yeniden sınırlandırıldı:
+`backend/` klasöründeki Node.js servisi aşağıdaki çalışma modelini kullanır:
 
 - Firebase ID token doğrulaması ve sunucu tarafından atanmış boolean `admin` yetkisi zorunludur.
 - Bildirim gönderimi varsayılan olarak kapalıdır; sunucu varsayılan olarak yalnızca loopback adresine bağlanır.
 - Firebase kimlik bilgileri Application Default Credentials ile dış ortamdan alınır; service-account JSON dosyası paylaşılmaz.
-- Eski, kimlik doğrulamasız test/broadcast uç noktası çıkarıldı.
+- Bildirim uç noktası kimliği doğrulanmış yönetici erişimi gerektirir.
 
 ```sh
 cd backend
